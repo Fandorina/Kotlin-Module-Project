@@ -1,6 +1,6 @@
 import java.util.Scanner
 
-object ArchiveCreating : Menu(), Interface {
+object ArchiveCreating : Menu() {
 
     override var menuTitle: String = "\nВы в меню создания архивов:"
     override val menuItems: ArrayList<String> = arrayListOf(
@@ -11,8 +11,8 @@ object ArchiveCreating : Menu(), Interface {
     fun printMenu() {
         while (true) {
             outputData(menuItems, -1, false, error)
-            var answer = inputData()
-            when(answer) {
+            val answer = inputData()
+            when (answer) {
                 "0" -> return
                 else -> {
                     ArchiveMenu.createArchive(answer)
